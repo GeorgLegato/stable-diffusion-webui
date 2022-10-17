@@ -322,7 +322,7 @@ def getAllowedArtists():
     return [x for x in shared.artist_db.artists if x.category in getAllowedArtistsCategory()]    
 
 def getAllowedArtistsNames():
-    return [x.name for x in getAllowedArtists()]    
+    return [x.name for x in getAllowedArtists()]
 
 def roll_artist(prompt):
     artist = random.choice(getAllowedArtists())
@@ -520,7 +520,7 @@ def create_toprow(is_img2img):
                                             button_deepbooru = gr.Button('Interrogate\nDeepBooru', elem_id="deepbooru")
         
                 with gr.Column(scale=1):
-                    artistsDD = gr.Dropdown(allowedArtists, Interactive=True, label="Artists", show_label=True, elem_id="artistsDD", visible=len(allowedArtists) > 0)
+                    artistsDD = gr.Dropdown(sorted(allowedArtists), Interactive=True, label="Artists", show_label=True, elem_id="artistsDD", visible=len(allowedArtists) > 0)
                     embStyleDD = gr.Dropdown(list(model_hijack.embedding_db.word_embeddings.keys()), Interactive=True, label="Embbedings", show_label=True, elem_id="embStyle", visible=len(model_hijack.embedding_db.word_embeddings.keys()) > 0)
                     with gr.Row(scale=1, elem_id="generateRow"):
                         skip = gr.Button('Skip', elem_id=f"{id_part}_skip")
