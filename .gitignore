@@ -31,3 +31,4 @@ scripts/txt2vectorgfx.py
 scripts/potrace.exe
 webui-user.bat
 webui-user.bat
+.vscode
